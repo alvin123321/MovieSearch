@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: aquatico;
+  src: url(assets/font/Aquatico-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: moon-bold;
+  src: url(assets/font/Moon2.0-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: moon-light;
+  src: url(assets/font/Moon2.0-Light.otf) format("opentype");
+}
+
+@font-face {
+  font-family: moon-regular;
+  src: url(assets/font/Moon2.0-Regular.otf) format("opentype");
+}
+
+html {
+  height: 95vh;
+  background-color: #c9af98;
+}
+body {
+  background-color: #c9af98;
+  height: 90%;
+}
+
+h1 {
+  font-family: aquatico;
+  letter-spacing: 18px;
+  font-size: 2.5em;
+}
