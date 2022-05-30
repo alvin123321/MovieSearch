@@ -32,7 +32,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   OmdbAPI(apiParam: string) {
-    console.log(apiParam);
     // Getting responses from OMDB api by searching movie id or imdb id
     this.http
       .get<any>(`http://www.omdbapi.com/?${apiParam}&apikey=503166e`)
