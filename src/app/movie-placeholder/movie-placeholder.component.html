@@ -1,7 +1,15 @@
-<p>movie-placeholder works!</p>
-<!-- <div *ngIf="loading">
-  <h2>loading</h2>
+<!-- display while all the movie data are ready -->
+<div *ngIf="movie && movie.Poster">
+  <img class="movieCard" src="{{ movie.Poster }}" [alt]="movie.Title" />
+  <div class="movieDescription">
+    <h1>{{ movie.Title }}</h1>
+    <h3>Year: {{ movie.Year }}</h3>
+    <!-- A button to display a label no function will fire while click -->
+    <button class="btn btn-outline-secondary">Watch Now!</button>
+  </div>
 </div>
-<div *ngIf="movie">
-  <h2>{{ movie.Title }}</h2>
-</div> -->
+
+<div *ngIf="movie && movie.Response === 'False'" style="text-align: center">
+  <!-- display error message -->
+  <h1>{{movie.Error}}</h1>
+</div>

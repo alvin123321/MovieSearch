@@ -1,0 +1,11 @@
+.movieDescription {
+  top: 50%;
+  text-align: center;
+  font-family: moon-bold;
+  margin-top: 24px;
+}
+
+.movieCard {
+  display: flex;
+  margin: auto;
+}
