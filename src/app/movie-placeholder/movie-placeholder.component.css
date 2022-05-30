@@ -1,11 +1,16 @@
-.movieDescription {
+.movie_description {
   top: 50%;
   text-align: center;
   font-family: moon-bold;
   margin-top: 24px;
 }
 
-.movieCard {
+.movie_card {
   display: flex;
   margin: auto;
+}
+
+.error_message {
+  text-align: center;
+  margin-top: 200px;
 }

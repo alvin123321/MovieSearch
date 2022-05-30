@@ -5,7 +5,7 @@
   margin-bottom: 32px;
 }
 
-.searchTerm {
+.search_term {
   width: 100%;
   border: 3px solid #3a4660;
   border-right: none;
@@ -15,9 +15,10 @@
   outline: none;
   color: black;
   height: auto;
+  text-align: center;
 }
 
-.searchButton {
+.search_button {
   width: 60px;
   height: 40px;
   border: 1px solid #3a4660;

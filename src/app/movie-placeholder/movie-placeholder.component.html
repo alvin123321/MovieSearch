@@ -1,15 +1,22 @@
-<!-- display while all the movie data are ready -->
-<div *ngIf="movie && movie.Poster">
-  <img class="movieCard" src="{{ movie.Poster }}" [alt]="movie.Title" />
-  <div class="movieDescription">
-    <h1>{{ movie.Title }}</h1>
-    <h3>Year: {{ movie.Year }}</h3>
-    <!-- A button to display a label no function will fire while click -->
-    <button class="btn btn-outline-secondary">Watch Now!</button>
-  </div>
+<!-- loading component while receiving movie data -->
+<div *ngIf="loading">
+  <app-newton-loader></app-newton-loader>
 </div>
 
-<div *ngIf="movie && movie.Response === 'False'" style="text-align: center">
-  <!-- display error message -->
-  <h1>{{movie.Error}}</h1>
+<!-- display while all the movie data are ready -->
+<div @fade *ngIf="!loading && movie">
+  <div *ngIf="movie.Poster">
+    <img class="movie_card" src="{{ movie.Poster }}" [alt]="movie.Title" />
+    <div class="movie_description">
+      <h1>{{ movie.Title }}</h1>
+      <h3>Year: {{ movie.Year }}</h3>
+      <!-- A button to display a label no function will fire while click -->
+      <button class="btn btn-outline-secondary">Watch Now!</button>
+    </div>
+  </div>
+
+  <div class="error_message" *ngIf="movie.Response === 'False'">
+    <!-- display error message -->
+    <h1>{{ movie.Error }}</h1>
+  </div>
 </div>

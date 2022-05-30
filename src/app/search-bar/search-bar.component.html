@@ -1,32 +1,45 @@
 <div class="wrap">
   <!-- Search movie by title -->
   <h2>Search by title</h2>
-  <div class="search">
-    <input
-      type="text"
-      class="searchTerm"
-      placeholder="Search by the title of the movie"
-      [(ngModel)]="movieName"
-    />
-    <button type="submit" class="searchButton" (click)="SearchByTitle()">
-      <i class="fa fa-search"></i>
-    </button>
-  </div>
+  <form (ngSubmit)="SearchMovie('title')">
+    <div class="search">
+      <input
+        type="text"
+        class="search_term"
+        placeholder="Enter the name of the movie"
+        name="movieName"
+        [(ngModel)]="movieName"
+      />
+      <button
+        type="submit"
+        class="search_button"
+        (click)="SearchMovie('title')"
+      >
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </form>
 
   <!-- Search movie by imdb id -->
   <h2>Search by Movie imdb ID</h2>
-  <div class="search">
-    <input
-      type="text"
-      class="searchTerm"
-      placeholder="Search by the title of the movie"
-      [(ngModel)]="movieId"
-    />
-    <button type="submit" class="searchButton" (click)="SearchById()">
-      <i class="fa fa-search"></i>
-    </button>
-  </div>
+  <form (ngSubmit)="SearchMovie('id')">
+    <div class="search">
+      <input
+        type="text"
+        class="search_term"
+        name="movieId"
+        placeholder="Enter the imdb id of the movie"
+        [(ngModel)]="movieId"
+      />
+      <button type="submit" class="search_button" (click)="SearchMovie('id')">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </form>
 </div>
 
 <!-- Component to display movie information -->
-<app-movie-placeholder [movie]="movie"></app-movie-placeholder>
+<app-movie-placeholder
+  [loading]="loading"
+  [movie]="movie"
+></app-movie-placeholder>
